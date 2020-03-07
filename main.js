@@ -1,4 +1,10 @@
 // let tryCount = 1
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+window.addEventListener('resize', () => {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
 
 function loadBase() {
     let startPage = 
@@ -7,7 +13,7 @@ function loadBase() {
         <div class="correct-num">
         0
         </div>
-        <div>Filmvia 
+        <div>Filmvia
         </div>
         <div class="incorrect-num">
         0

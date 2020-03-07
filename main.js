@@ -2,6 +2,7 @@
 $(function() {
   $('body').scrollTop(0);
 });
+
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 window.addEventListener('resize', () => {
@@ -43,11 +44,10 @@ function loadBase() {
 
   $('.start-button').click(function() {
       $('.quiz-area').html(quizQuestions[i].qText)
-      $('button').replaceWith(`<button class="next-button" id="nxt">Next Question!</button>`)
+      $('button').replaceWith(`<button class="next-button" id="nxt">Next Question! 1 of 28 </button>`)
       for(op = 0; op < quizQuestions[i].qOptions.length; op++) {
       $('.quiz-area').append(`<button class="option" id="${op}">${quizQuestions[i].qOptions[op].optionText}</button>`)
       }
-    i++
   });
 
   // function resultsPage() {
@@ -68,14 +68,21 @@ function loadBase() {
       $(".correct-num").html(`${correct}`)
     }
   else {
-      incorrect++
       $(`#${this.id}`).css("border", "5px solid red").html("WRONG!")
+      for (b = 0; b < quizQuestions[i].qOptions.length; b++) {
+        if (quizQuestions[i].qOptions[b].optionCorrect === true) {
+          $('.quiz-area').append(`<section id="correctUnselected"> The correct answer is ${quizQuestions[i].qOptions[b].optionText} </section>`)
+        }
+      }
+      incorrect++
       $(".incorrect-num").html(`${incorrect}`)
+      console.log(b)
   }
 
   i = correct + incorrect
 
   $('body').on('click', '.next-button', function() {
+    $('.next-button').html(`Next Question! ${i+1} of 28`)
     if (i < quizQuestions.length) {
       $('.quiz-area').html(quizQuestions[i].qText)
       for(op = 0; op < quizQuestions[i].qOptions.length; op++) {
@@ -129,7 +136,7 @@ $('body').on('click', '.restart-button', function() {
       ]},
       {qText: "Who destroyed the One Ring?", qOptions: [
         {optionText: "Frodo", optionCorrect: true},
-        {optionText: "Biblo", optionCorrect:false},
+        {optionText: "Bilbo", optionCorrect:false},
       ]},
       {qText: "The Fault in our Stars explores the drama of sexual abuse?", qOptions: [
         {optionText: "True", optionCorrect: false},
@@ -235,7 +242,7 @@ $('body').on('click', '.restart-button', function() {
       ]},
       {qText: "When did the Dark Lord Sauron forge the One Ring?", qOptions: [
         {optionText: "Before Middle Earth Began", optionCorrect: false},
-        {optionText: "At the formation of Morodor", optionCorrect: false},
+        {optionText: "At the formation of Mordor", optionCorrect: false},
         {optionText: "In the Silmarillion Era", optionCorrect: false},
         {optionText: "After the fall of Dunis Merth", optionCorrect: false},
         {optionText: "During the 2nd Age", optionCorrect: true},

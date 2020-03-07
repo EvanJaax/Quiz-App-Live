@@ -10,6 +10,7 @@ body {
     display: flex;
     justify-content: center;
     height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     max-width: 100vh;
     margin: auto;
     padding: 0px;
@@ -21,6 +22,7 @@ body.noScroll {
 
 main {
     height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     width: 100vh;
     background-image: url("Black-white-chalkboard.jpg");
     background-size: fill;
@@ -41,7 +43,7 @@ main {
 }
 
 nav {
-    font-size: 4rem;
+    font-size: 4vh;
     text-align: center;
     font-style: oblique; 
     display: flex;

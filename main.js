@@ -7,7 +7,8 @@ function loadBase() {
         <div class="correct-num">
         0
         </div>
-        Filmvia
+        <div>Filmvia 
+        </div>
         <div class="incorrect-num">
         0
         </div>
@@ -74,7 +75,6 @@ function loadBase() {
     }
     else {
       $('.quiz-area').html(`You got ${correct} out of ${quizQuestions.length} questions right! Great job! Want to try again? :)`)
-      $('div').html("");
       $('#nxt').removeClass('next-button').addClass("restart-button").html("Retry Quiz???");
     }
   });
@@ -167,7 +167,7 @@ $('body').on('click', '.restart-button', function() {
         {optionText: "2002", optionCorrect: false},
         {optionText: "1943", optionCorrect: false},
       ]},
-      {qText: "Which is an infinity stone?", qOptions: [
+      {qText: "Which IS an infinity stone?", qOptions: [
         {optionText: "Spirit", optionCorrect: false},
         {optionText: "Enchantment", optionCorrect: false},
         {optionText: "Infinity", optionCorrect: false},

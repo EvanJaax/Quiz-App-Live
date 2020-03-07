@@ -47,6 +47,8 @@ nav {
     font-style: oblique; 
     display: flex;
     justify-content: center;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
 }
 
 div {

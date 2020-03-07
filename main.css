@@ -3,6 +3,7 @@ html {
     height: 100vh;
     max-width: 100vh;
     min-height: 100vh
+    
 }
 
 body {
@@ -10,16 +11,22 @@ body {
     justify-content: center;
     height: 100vh;
     max-width: 100vh;
+    margin: auto;
+    padding: 0px;
 }
+
+body.noScroll {
+    overflow: hidden;
+  }
+
 main {
     height: 100vh;
     width: 100vh;
     background-image: url("Black-white-chalkboard.jpg");
-    background-size: cover;
+    background-size: fill;
+    align-self: center;
     display: flex;
     flex-direction: column;
-    border: 3px solid white;
-    border-radius: 20px;
 }
 
 .quiz-area {
@@ -47,10 +54,11 @@ div {
 }
 
 button {
-    width: 100%;
+    width: 50%;
     height: 50px;
     font-size: 1rem;
     margin: auto;
+    margin-bottom: 10px;
     border-radius: 15px;
     background-color: white;
 }
